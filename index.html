@@ -57,7 +57,7 @@
     <div class="support"></div>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v10';
+    var version = 'v11';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -68,10 +68,18 @@
         var time = new Date().getTime();
         location.href = location.origin + location.pathname + '?time=' + time;
     });
-    var support = 'safe-area-inset-top:' + safeAreaInsets.top + '<br/>'
+    
+    safeAreaInsets.onChange(function(){
+        updateSupport();
+    });
+
+    updateSupport();
+    function updateSupport() {
+        var support = 'safe-area-inset-top:' + safeAreaInsets.top + '<br/>'
         + 'safe-area-inset-left:' + safeAreaInsets.left + '<br/>'
         + 'safe-area-inset-bottom:' + safeAreaInsets.bottom + '<br/>'
         + 'safe-area-inset-right:' + safeAreaInsets.right + '<br/>';
-    $('.support').html(support);
+        $('.support').html(support);
+    }
 </script>
 </html>
