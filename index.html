@@ -46,7 +46,7 @@
         }
         @supports (padding-bottom: env(safe-area-inset-bottom)) {
             .demo {
-                padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+                padding-bottom: env(safe-area-inset-top);
             }
         }
     </style>
@@ -55,7 +55,7 @@
     <button class="btn">reflash</button>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v5';
+    var version = 'v6';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
