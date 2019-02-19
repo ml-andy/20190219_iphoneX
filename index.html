@@ -48,11 +48,11 @@
 </head>
 <body><div class="demo"><span></span></div></body>
 <script>
-    var version = 'v2';
+    var version = 'v4';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
-        location.href = location.host + '?version=' + version;
+        location.href = location.origin + location.pathname + '?version=' + version;
     }
     $('.demo span').html(version);
 </script>
