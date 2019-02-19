@@ -56,7 +56,7 @@
     <div class="support"></div>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v8';
+    var version = 'v9';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -67,6 +67,7 @@
         var time = new Date().getTime();
         location.href = location.origin + location.pathname + '?time=' + time;
     });
+    var safeAreaInsets = require('safe-area-insets');
     var support = 'safe-area-inset-top:' + safeAreaInsets.top + ';'
         + 'safe-area-inset-left:' + safeAreaInsets.left + ';'
         + 'safe-area-inset-bottom:' + safeAreaInsets.bottom + ';'
