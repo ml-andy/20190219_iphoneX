@@ -12,6 +12,11 @@
             padding: 0;
             margin: 0;
         }
+        .btn {
+            width: 100px;
+            height: 50px;
+            background-color: burlywood;
+        }
         .demo {
             position: fixed;
             width: 100%;
@@ -41,19 +46,25 @@
         }
         @supports (padding-bottom: env(safe-area-inset-bottom)) {
             .demo {
-                padding-bottom: env(safe-area-inset-bottom);
+                padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
             }
         }
     </style>
 </head>
-<body><div class="demo"><span></span></div></body>
+<body>
+    <button class="btn">reflash</button>
+    <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v4';
+    var version = 'v5';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
         location.href = location.origin + location.pathname + '?version=' + version;
     }
     $('.demo span').html(version);
+    $('.btn').on('click', function() {
+        var time = new Date().getTime();
+        location.href = location.origin + location.pathname + '?time=' + time;
+    });
 </script>
 </html>
