@@ -1,0 +1,11 @@
+{
+    "name": "treemall-flash",
+    "version": "0.0.1",
+    "description": "zzz",
+    "scripts": {
+        "dev": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.16.4"
+    }
+}
