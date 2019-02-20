@@ -60,7 +60,7 @@
     <div class="availHeight"></div>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v23';
+    var version = 'v24';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -94,7 +94,7 @@
         $('.availHeight').html(availHeight);
         
         var paddingBottom = screen.availHeight - window.innerHeight;
-        $('.demo').style({
+        $('.demo').css({
             'paddingBottom':  paddingBottom + 'px',
         });
     }
