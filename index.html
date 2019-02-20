@@ -61,7 +61,7 @@
     <div class="availTop"></div>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v25';
+    var version = 'v26';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -90,8 +90,8 @@
     }
     function updateWindowHeight() {
         var innerHeight = 'innerHeight:' + window.innerHeight + '<br/>';
-        var availHeight = 'availHeight' + screen.availHeight + '<br/>';
-        var availTop = 'availTop' + screen.availTop + '<br/>';
+        var availHeight = 'availHeight:' + screen.availHeight + '<br/>';
+        var availTop = 'availTop:' + screen.availTop + '<br/>';
         $('.innerHeight').html(innerHeight);
         $('.availHeight').html(availHeight);
         $('.availTop').html(availTop);
