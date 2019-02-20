@@ -69,11 +69,13 @@
         var time = new Date().getTime();
         location.href = location.origin + location.pathname + '?time=' + time;
     });
+    window.on('scroll', function() {
+        updateWindowHeight();
+    })
     
     safeAreaInsets.onChange(function(){
         updateSupport();
     });
-    window.scrollTo(0, 100);
 
     updateSupport();
     function updateSupport() {
@@ -82,6 +84,12 @@
         + 'safe-area-inset-bottom:' + safeAreaInsets.bottom + '<br/>'
         + 'safe-area-inset-right:' + safeAreaInsets.right + '<br/>';
         $('.support').append(support);
+    }
+    function updateWindowHeight() {
+        var innerHeight = 'innerHeight:' + window.innerHeight + '<br/>';
+        var outerHieght = 'outerHieght' + window.outerHeight + '<br/>';
+        $('.support').append(innerHeight);
+        $('.support').append(outerHieght);
     }
 </script>
 </html>
