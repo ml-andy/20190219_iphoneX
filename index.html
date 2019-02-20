@@ -53,6 +53,10 @@
                 padding-bottom: env(safe-area-inset-left);
             }
         }
+        select {
+            -webkit-appearance: none;
+            /* outline: none; */
+        }
     </style>
 </head>
 <body>
@@ -69,7 +73,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v27';
+    var version = 'v28';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
