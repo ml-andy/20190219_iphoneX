@@ -58,7 +58,7 @@
     <div class="support"></div>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v18';
+    var version = 'v19';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -69,9 +69,9 @@
         var time = new Date().getTime();
         location.href = location.origin + location.pathname + '?time=' + time;
     });
-    window.on('scroll', function() {
+    window.onscroll = function() {
         updateWindowHeight();
-    })
+    };
     
     safeAreaInsets.onChange(function(){
         updateSupport();
