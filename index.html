@@ -58,7 +58,7 @@
     <div class="support"></div>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v19';
+    var version = 'v20';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -87,9 +87,9 @@
     }
     function updateWindowHeight() {
         var innerHeight = 'innerHeight:' + window.innerHeight + '<br/>';
-        var outerHieght = 'outerHieght' + window.outerHeight + '<br/>';
+        var clientHeight = 'clientHeight' + document.documentElement.clientHeight + '<br/>';
         $('.support').append(innerHeight);
-        $('.support').append(outerHieght);
+        $('.support').append(clientHeight);
     }
 </script>
 </html>
