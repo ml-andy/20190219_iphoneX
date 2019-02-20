@@ -54,8 +54,9 @@
             }
         }
         select {
-            -webkit-appearance: none;
-            /* outline: none; */
+            /* -webkit-appearance: none; */
+            border-radius: 20px;
+            outline: none;
         }
     </style>
 </head>
@@ -73,7 +74,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v28';
+    var version = 'v29';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
