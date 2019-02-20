@@ -57,7 +57,7 @@
     <div class="support"></div>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v12';
+    var version = 'v13';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -81,5 +81,6 @@
         + 'safe-area-inset-right:' + safeAreaInsets.right + '<br/>';
         $('.support').append(support);
     }
+    window.scrollTo(0,1);
 </script>
 </html>
