@@ -59,6 +59,11 @@
             border-radius: 20px;
             outline: none;
         }
+        .select4 {
+            height: 40px;
+            border-radius: 20px;
+            outline: none;
+        }
         .select2 {
             padding: 10px;
             height: 40px;
@@ -85,14 +90,17 @@
         <option value="1">option 1</option>
     </select>
     <select class="select2">
-        <option value="1">option 1</option>
+        <option value="2">option 2</option>
     </select>
     <select class="select3">
-        <option value="1">option 1</option>
+        <option value="3">option 3</option>
+    </select>
+    <select class="select4">
+        <option value="4">option 4</option>
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v35';
+    var version = 'v36';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
