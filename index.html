@@ -4,8 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <title>test</title>
     <script src="https://unpkg.com/safe-area-insets/out/umd/index.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -25,6 +23,7 @@
             width: 100%;
             height: 20px;
             bottom: 0;
+            left: 0;
             background-color: blue;
             text-align: center;
             color: #000;
@@ -59,7 +58,7 @@
     <div class="support"></div>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v16';
+    var version = 'v17';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -74,6 +73,7 @@
     safeAreaInsets.onChange(function(){
         updateSupport();
     });
+    window.scrollTo(0, 100);
 
     updateSupport();
     function updateSupport() {
