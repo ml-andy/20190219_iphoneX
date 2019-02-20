@@ -56,9 +56,11 @@
 <body>
     <button class="btn">reflash</button>
     <div class="support"></div>
+    <div class="innerHeight"></div>
+    <div class="availHeight"></div>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v21';
+    var version = 'v22';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -87,9 +89,14 @@
     }
     function updateWindowHeight() {
         var innerHeight = 'innerHeight:' + window.innerHeight + '<br/>';
-        var availHeight = 'clientHeight' + screen.availHeight + '<br/>';
-        $('.support').append(innerHeight);
-        $('.support').append(availHeight);
+        var availHeight = 'availHeight' + screen.availHeight + '<br/>';
+        $('.innerHeight').html(innerHeight);
+        $('.availHeight').html(availHeight);
+        
+        var paddingBottom = screen.availHeight - window.innerHeight;
+        $('.demo').style({
+            'paddingBottom':  paddingBottom + 'px';
+        });
     }
 </script>
 </html>
