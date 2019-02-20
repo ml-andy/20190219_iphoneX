@@ -53,8 +53,20 @@
                 padding-bottom: env(safe-area-inset-left);
             }
         }
-        select {
+        .select1 {
             /* -webkit-appearance: none; */
+            height: 50px;
+            border-radius: 20px;
+            outline: none;
+        }
+        .select2 {
+            height: 40px;
+            border-radius: 20px;
+            outline: none;
+        }
+        .select3 {
+            -webkit-appearance: none;
+            height: 40px;
             border-radius: 20px;
             outline: none;
         }
@@ -67,15 +79,18 @@
     <div class="innerHeight"></div>
     <div class="availHeight"></div>
     <div class="availTop"></div>
-    <select>
+    <select class="select1">
         <option value="1">option 1</option>
-        <option value="2">option 2</option>
-        <option value="3">option 3</option>
-        <option value="4">option 4</option>
+    </select>
+    <select class="select2">
+        <option value="1">option 1</option>
+    </select>
+    <select class="select3">
+        <option value="1">option 1</option>
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v33';
+    var version = 'v34';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
