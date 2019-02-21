@@ -79,20 +79,22 @@
             top: 0;
             z-index: 999;
             background-color: rgba(0,0,0,0.8);
+            display: none;
         }
         .popup .main {
             position: absolute;
             width: 400px;
-            height: 300px;
+            height: 200px;
             left: 50%;
             top: 50%;
             margin-left: -200px;
             margin-top: -150px;
-            overflow: scroll;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
             background-color: #fff;
         }
         .popup .main .content {
-            height: 500px;
+            height: 800px;
         }
     </style>
 </head>
@@ -119,7 +121,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v40';
+    var version = 'v41';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -160,7 +162,7 @@
         // });
     }
     $('.btn2').on('click', function(){
-        location.href = 'http://203.135.68.133/order?quantity=20&startDate=2019-02-14%2000:00:00&endDate=2019-02-20%2000:00:00&cpdtNum=30210128&token=';
+        $('.popup').show();
     });
     
 </script>
