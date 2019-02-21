@@ -87,8 +87,7 @@
             height: 200px;
             left: 50%;
             top: 50%;
-            margin-left: -200px;
-            margin-top: -150px;
+            transform: translate(-50%, -50%);
             overflow-y: scroll;
             -webkit-overflow-scrolling: touch;
             background-color: #fff;
@@ -121,7 +120,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v42';
+    var version = 'v43';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
