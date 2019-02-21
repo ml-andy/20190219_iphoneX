@@ -7,16 +7,12 @@
     <title>test</title>
     <script src="https://unpkg.com/safe-area-insets/out/umd/index.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
+    <script src="./bodyScrollLock.min.js"></script>
     <style>
         body {
             height: 2000px;
             padding: 0;
             margin: 0;
-        }
-        body.modal-open {
-            overflow: hidden;
         }
         .btn {
             width: 100px;
@@ -123,7 +119,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v44';
+    var version = 'v46';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -163,10 +159,10 @@
         //     'paddingBottom':  paddingBottom + 'px',
         // });
     }
+
     $('.btn2').on('click', function(){
         $('.popup').show();
-        $('body').addClass('modal-open');
+        bodyScrollLock.disableBodyScroll($('.popup'));
     });
-    
 </script>
 </html>
