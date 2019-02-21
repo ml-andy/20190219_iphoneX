@@ -118,7 +118,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v47';
+    var version = 'v48';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -161,7 +161,7 @@
 
     $('.btn2').on('click', function(){
         $('.popup').show();
-        bodyScrollLock.disableBodyScroll($('.popup'));
+        bodyScrollLock.disableBodyScroll($('body'));
     });
 </script>
 </html>
