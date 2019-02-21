@@ -71,11 +71,39 @@
             -webkit-appearance: none;
             outline: none;
         }
+        .popup {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            z-index: 999;
+            background-color: rgba(0,0,0,0.8);
+        }
+        .popup .main {
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            left: 50%;
+            top: 50%;
+            margin-left: -200px;
+            margin-top: -150px;
+            overflow: scroll;
+            background-color: #fff;
+        }
+        .popup .main .content {
+            height: 500px;
+        }
     </style>
 </head>
 <body>
     <button class="btn">reflash</button>
-    <button class="btn2">redirect</button>
+    <button class="btn2">popup</button>
+    <div class="popup">
+        <div class="main">
+            <div class="content">1234567890</div>
+        </div>
+    </div>
     <div class="support"></div>
     <div class="innerHeight"></div>
     <div class="availHeight"></div>
@@ -91,7 +119,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v39';
+    var version = 'v40';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
