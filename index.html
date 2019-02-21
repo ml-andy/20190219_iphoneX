@@ -15,6 +15,9 @@
             padding: 0;
             margin: 0;
         }
+        body.modal-open {
+            overflow: hidden;
+        }
         .btn {
             width: 100px;
             height: 50px;
@@ -102,7 +105,7 @@
     <button class="btn2">popup</button>
     <div class="popup">
         <div class="main">
-            <div class="content">1234567890</div>
+            <div class="content">modal-open</div>
         </div>
     </div>
     <div class="support"></div>
@@ -120,7 +123,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v43';
+    var version = 'v44';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -162,6 +165,7 @@
     }
     $('.btn2').on('click', function(){
         $('.popup').show();
+        $('body').addClass('modal-open');
     });
     
 </script>
