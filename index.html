@@ -121,7 +121,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v59';
+    var version = 'v60';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -164,6 +164,7 @@
 
     $('.btn2').on('click', function(){
         $('.popup').show();
+        $('.main').scrollTop(1);
         bodyScrollLock.disableBodyScroll($('popup'), {
             allowTouchMove: function(el) {
                 while (el && el !== document.body) {
