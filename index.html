@@ -84,15 +84,22 @@
         .popup .main {
             position: absolute;
             width: 80%;
-            height: 200px;
+            height: 400px;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
-            overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
             background-color: #fff;
         }
-        .popup .main .content {
+        .popup .container {
+            position: relative;
+            height: 200px;
+            width: 100%;
+            overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
+            border: 1px solid #000;
+            margin-top: 50px;
+        }
+        .popup .main .container .content {
             height: 800px;
         }
     </style>
@@ -103,7 +110,9 @@
     <button class="btn2">popup bodylock</button>
     <div class="popup">
         <div class="main" body-scroll-lock-ignore>
-            <div class="content">modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open </div>
+            <div class="container">
+                <div class="content">modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open </div>
+            </div>
         </div>
     </div>
     <div class="support"></div>
@@ -121,7 +130,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v60';
+    var version = 'v61';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -164,7 +173,7 @@
 
     $('.btn2').on('click', function(){
         $('.popup').show();
-        $('.main').scrollTop(1);
+        $('.container').scrollTop(1);
         bodyScrollLock.disableBodyScroll($('popup'), {
             allowTouchMove: function(el) {
                 while (el && el !== document.body) {
