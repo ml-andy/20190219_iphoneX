@@ -13,6 +13,7 @@
             height: 2000px;
             padding: 0;
             margin: 0;
+            padding-top: 200px;
         }
         body.modal-open {
             position: fixed;
@@ -92,6 +93,7 @@
             top: 50%;
             transform: translate(-50%, -50%);
             overflow-y: scroll;
+            -webkit-overflow-scrolling: touch;
             background-color: #fff;
         }
         .popup .main .content {
@@ -105,7 +107,7 @@
     <button class="btn3">popup bodyfixed</button>
     <div class="popup">
         <div class="main" body-scroll-lock-ignore>
-            <div class="content">modal-open</div>
+            <div class="content">modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open modal-open </div>
         </div>
     </div>
     <div class="support"></div>
@@ -123,7 +125,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v55';
+    var version = 'v56';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
