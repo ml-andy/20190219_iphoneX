@@ -118,7 +118,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v49';
+    var version = 'v50';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -163,9 +163,7 @@
         $('.popup').show();
         bodyScrollLock.disableBodyScroll($('popup'), {
             allowTouchMove: function(el) {
-                console.log(el);
-                console.log($('.popup'));
-                return el === $('.popup');
+                return el.className === 'main';
             },
         });
     });
