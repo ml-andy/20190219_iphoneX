@@ -88,7 +88,6 @@
             top: 50%;
             transform: translate(-50%, -50%);
             overflow-y: scroll;
-            -webkit-overflow-scrolling: touch;
             background-color: #fff;
         }
         .popup .main .content {
@@ -119,7 +118,7 @@
     </select>
     <div class="demo"><span></span></div></body>
 <script>
-    var version = 'v52';
+    var version = 'v53';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
