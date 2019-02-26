@@ -11,10 +11,13 @@
 <body>
   <button class="btn reflash">reflash</button>
   <button class="btn fbLogin">fbLogin</button>
+  <div class="content">
+
+  </div>
 </body>
 
 <script>
-  var version = 'v67';
+  var version = 'v68';
   var search = location.search;
   var isNotRightUrl = search.indexOf('version=' + version) === -1;
   if (isNotRightUrl) {
@@ -48,6 +51,8 @@
   $('.fbLogin').on('click', function() {
     fbLogin(function(obj) {
       console.log(obj);
+      $('.content').append(`email:${obj.email}`);
+      $('.content').append(`url:${location.href}`);
     });
   });
 
