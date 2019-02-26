@@ -17,7 +17,7 @@
 </body>
 
 <script>
-  var version = 'v68';
+  var version = 'v69';
   var search = location.search;
   var isNotRightUrl = search.indexOf('version=' + version) === -1;
   if (isNotRightUrl) {
@@ -51,8 +51,8 @@
   $('.fbLogin').on('click', function() {
     fbLogin(function(obj) {
       console.log(obj);
-      $('.content').append(`email:${obj.email}`);
-      $('.content').append(`url:${location.href}`);
+      $('.content').append(`email:${obj.email}</br>`);
+      $('.content').append(`url:${location.href}</br>`);
     });
   });
 
