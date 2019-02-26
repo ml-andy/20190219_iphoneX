@@ -9,6 +9,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+    <button class="btn redirect">redirect</button>
   <button class="btn reflash">reflash</button>
   <button class="btn fbLogin">fbLogin</button>
   <p class="version"></p>
@@ -18,16 +19,27 @@
 </body>
 
 <script>
-  var version = 'v72';
+  var version = 'v73';
   var search = location.search;
   var isNotRightUrl = search.indexOf('version=' + version) === -1;
   if (isNotRightUrl) {
-    location.href = location.origin + location.pathname + '?version=' + version;
+    var islocationSearch = location.search !== '';
+    var locationSearch = '';
+    if (islocationSearch) {
+      locationSearch = location.search.replace('?', '') + '&version=' + version;
+    } else {
+      locationSearch = 'version=' + version;
+    }
+    location.href = location.origin + location.pathname + '?' + locationSearch;
   }
   $('.version').html(version);
+  $('.content').append('url:' + location.href + '</br>');
   $('.reflash').on('click', function() {
     var time = new Date().getTime();
     location.href = location.origin + location.pathname + '?time=' + time;
+  });
+  $('.redirect').on('click', function() {
+    location.href = 'login.html?back=1';
   });
 
   /* =========================================================================== */
@@ -86,13 +98,11 @@
         fn({ status_id });
       }
     }, options);
-  }
-
-  $('.content').append('url:' + location.href + '</br>');
+  }  
 
   var search = location.search;
-  if (search.indexOf('loginback') !== -1) {
-    $('.content').append('loginback</br>');
+  if (search.indexOf('back') !== -1) {
+    $('.content').append('login back</br>');
     fbLogin(function(obj) {
       $('.content').append('email:' + obj.email + '</br>');
       $('.content').append('url:' + location.href + '</br>');
