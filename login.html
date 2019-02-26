@@ -14,7 +14,7 @@
 </body>
 
 <script>
-  var version = 'v65';
+  var version = 'v66';
   var search = location.search;
   var isNotRightUrl = search.indexOf('version=' + version) === -1;
   if (isNotRightUrl) {
@@ -28,8 +28,9 @@
   /* =========================================================================== */
     
   window.fbAsyncInit = () => {
+    console.log('fbAsyncInit');
     FB.init({
-      appId            : this.fb_appId,
+      appId            : '309850763221643',
       autoLogAppEvents : true,
       xfbml            : true,
       version          : 'v3.2',
