@@ -11,18 +11,20 @@
 <body>
   <button class="btn reflash">reflash</button>
   <button class="btn fbLogin">fbLogin</button>
+  <p class="version"></p>
   <div class="content">
 
   </div>
 </body>
 
 <script>
-  var version = 'v70';
+  var version = 'v71';
   var search = location.search;
   var isNotRightUrl = search.indexOf('version=' + version) === -1;
   if (isNotRightUrl) {
     location.href = location.origin + location.pathname + '?version=' + version;
   }
+  $('.version').html(version);
   $('.reflash').on('click', function() {
     var time = new Date().getTime();
     location.href = location.origin + location.pathname + '?time=' + time;
@@ -51,6 +53,7 @@
   $('.fbLogin').on('click', function() {
     fbLogin(function(obj) {
       console.log(obj);
+      alert(obj);
       $('.content').append(`email:${obj.email}</br>`);
       $('.content').append(`url:${location.href}</br>`);
     });
