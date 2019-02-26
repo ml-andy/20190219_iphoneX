@@ -18,7 +18,7 @@
 </body>
 
 <script>
-  var version = 'v71';
+  var version = 'v72';
   var search = location.search;
   var isNotRightUrl = search.indexOf('version=' + version) === -1;
   if (isNotRightUrl) {
@@ -52,29 +52,27 @@
 
   $('.fbLogin').on('click', function() {
     fbLogin(function(obj) {
-      console.log(obj);
-      alert(obj);
-      $('.content').append(`email:${obj.email}</br>`);
-      $('.content').append(`url:${location.href}</br>`);
+      $('.content').append('email:' + obj.email + '</br>');
+      $('.content').append('url:' + location.href + '</br>');
     });
   });
 
   function fbLogin(fn) {
-    const options = {
+    var options = {
       scope: 'email',
       return_scopes: true,
       auth_type: 'rerequest',
     };
 
     FB.login((response) => {
-      const { authResponse = null } = response;
-      const grantedScopes = authResponse ? authResponse['grantedScopes'] : '';
-      const isAuthEmail = grantedScopes.indexOf('email') >= 0;
+      var { authResponse = null } = response;
+      var grantedScopes = authResponse ? authResponse['grantedScopes'] : '';
+      var isAuthEmail = grantedScopes.indexOf('email') >= 0;
 
       if (authResponse && isAuthEmail) {
-        FB.api('/me?fields=email', (response) => {
-          const success = response.email ? true : false;
-          const status_id = success ? '' : 'SOCIALMEDIA_E003';
+        FB.api('/me?fields=email', function(response) {
+          var success = response.email ? true : false;
+          var status_id = success ? '' : 'SOCIALMEDIA_E003';
           fn({
             success,
             email: response.email,
@@ -82,12 +80,23 @@
           });
         });
       } else {
-        const status_id = authResponse
+        var status_id = authResponse
           ? 'SOCIALMEDIA_E002'
           : 'SOCIALMEDIA_E001';
         fn({ status_id });
       }
     }, options);
+  }
+
+  $('.content').append('url:' + location.href + '</br>');
+
+  var search = location.search;
+  if (search.indexOf('loginback') !== -1) {
+    $('.content').append('loginback</br>');
+    fbLogin(function(obj) {
+      $('.content').append('email:' + obj.email + '</br>');
+      $('.content').append('url:' + location.href + '</br>');
+    });
   }
 
 </script>
