@@ -108,6 +108,7 @@
     <button class="btn">reflash</button>
     <button class="btn3">popup origin</button>
     <button class="btn2">popup bodylock</button>
+    <button class="btn4">showAgent</button>
     <div class="popup">
         <div class="main">
             <div class="container" body-scroll-lock-ignore>
@@ -132,7 +133,7 @@
 </body>
 
 <script>
-    var version = 'v70';
+    var version = 'v74';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -141,8 +142,8 @@
     $('.demo span').html(version);
     $('.btn').on('click', function() {
         var time = new Date().getTime();
-        // location.href = location.origin + location.pathname + '?time=' + time;
-        location.href = 'https://ml-andy.github.io/20190219_iphoneX/login.html';
+        location.href = location.origin + location.pathname + '?time=' + time + '&token=';
+        // location.href = 'https://ml-andy.github.io/20190219_iphoneX/login.html';
     });
     window.onscroll = function() {
         updateWindowHeight();
@@ -191,5 +192,13 @@
     $('.btn3').on('click', function(){
         $('.popup').show();
     });
+    
+    $('.btn4').on('click', function() {
+        showAgent();
+    })
+    function showAgent() {
+        $('.support').append(navigator.userAgent);
+    }
+
 </script>
 </html>
