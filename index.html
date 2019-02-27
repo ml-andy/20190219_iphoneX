@@ -133,7 +133,7 @@
 </body>
 
 <script>
-    var version = 'v77';
+    var version = 'v78';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -197,8 +197,8 @@
         showAgent();
     })
     function showAgent() {
-        $('.support').append(navigator.userAgent + '<br/>');
-        $('.support').append(document.cookie + '<br/>');
+        $('.support').append('userAgent:<br/>' + navigator.userAgent + '<br/><br/>');
+        $('.support').append('cookie:<br/>' + document.cookie + '<br/><br/>');
     }
 
 </script>
