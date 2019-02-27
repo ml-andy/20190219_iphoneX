@@ -133,7 +133,7 @@
 </body>
 
 <script>
-    var version = 'v78';
+    var version = 'v79';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -146,11 +146,11 @@
         // location.href = 'https://ml-andy.github.io/20190219_iphoneX/login.html';
     });
     window.onscroll = function() {
-        updateWindowHeight();
+        // updateWindowHeight();
     };
     
     safeAreaInsets.onChange(function(){
-        updateSupport();
+        // updateSupport();
     });
 
     // updateSupport();
