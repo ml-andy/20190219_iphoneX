@@ -133,11 +133,11 @@
 </body>
 
 <script>
-    var version = 'v74';
+    var version = 'v75';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
-        location.href = location.origin + location.pathname + '?version=' + version;
+        location.href = location.origin + location.pathname + '?version=' + version + '&token=';
     }
     $('.demo span').html(version);
     $('.btn').on('click', function() {
