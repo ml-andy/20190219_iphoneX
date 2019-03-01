@@ -19,7 +19,7 @@
 </body>
 
 <script>
-  var version = 'v73';
+  var version = 'v80';
   var search = location.search;
   var isNotRightUrl = search.indexOf('version=' + version) === -1;
   if (isNotRightUrl) {
@@ -39,7 +39,7 @@
     location.href = location.origin + location.pathname + '?time=' + time;
   });
   $('.redirect').on('click', function() {
-    location.href = 'login.html?back=1';
+    location.href = 'login.html?fbback=1';
   });
 
   /* =========================================================================== */
@@ -63,10 +63,12 @@
   }(document, 'script', 'facebook-jssdk'));
 
   $('.fbLogin').on('click', function() {
-    fbLogin(function(obj) {
-      $('.content').append('email:' + obj.email + '</br>');
-      $('.content').append('url:' + location.href + '</br>');
-    });
+    location.href = 'https://www.facebook.com/v3.2/dialog/oauth?client_id=309850763221643&redirect_uri=https://ml-andy.github.io/20190219_iphoneX/login.html?fbback=1';
+
+    // fbLogin(function(obj) {
+    //   $('.content').append('email:' + obj.email + '</br>');
+    //   $('.content').append('url:' + location.href + '</br>');
+    // });
   });
 
   function fbLogin(fn) {
@@ -101,7 +103,7 @@
   }  
 
   var search = location.search;
-  if (search.indexOf('back') !== -1) {
+  if (search.indexOf('fbback') !== -1) {
     $('.content').append('login back</br>');
     fbLogin(function(obj) {
       $('.content').append('email:' + obj.email + '</br>');
