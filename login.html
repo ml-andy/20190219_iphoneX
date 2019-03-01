@@ -20,7 +20,7 @@
 </body>
 
 <script>
-  var version = 'v81';
+  var version = 'v82';
   var search = location.search;
   var isNotRightUrl = search.indexOf('version=' + version) === -1;
   if (isNotRightUrl) {
@@ -108,7 +108,7 @@
   window.googleAsyncInit = () => {
     gapi.load('auth2', () => {
       this.googleAuth2 = gapi.auth2.init({
-        client_id: this.google_client_id,
+        client_id: '869083124074-h00e4aebh16v8o6o3o830ak419e8q2cp.apps.googleusercontent.com',
         scope: 'email'
       });
     });
@@ -123,7 +123,7 @@
   }(document, 'script', 'google-jssdk'));
 
   $('.googleLogin').on('click', function() {
-    location.href = 'https://ml-andy.github.io/20190219_iphoneX/login.html?googleback=1';
+    location.href = 'https://accounts.google.com/signin/oauth/identifier?client_id=869083124074-h00e4aebh16v8o6o3o830ak419e8q2cp.apps.googleusercontent.com&destination=https://ml-andy.github.io/20190219_iphoneX/login.html?googleback=1';
   });
 
   /* =========================================================================== */
