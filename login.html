@@ -12,6 +12,7 @@
     <button class="btn redirect">redirect</button>
   <button class="btn reflash">reflash</button>
   <button class="btn fbLogin">fbLogin</button>
+  <button class="btn googleLogin">googleLogin</button>
   <p class="version"></p>
   <div class="content">
 
@@ -19,7 +20,7 @@
 </body>
 
 <script>
-  var version = 'v80';
+  var version = 'v81';
   var search = location.search;
   var isNotRightUrl = search.indexOf('version=' + version) === -1;
   if (isNotRightUrl) {
@@ -100,15 +101,42 @@
         fn({ status_id });
       }
     }, options);
-  }  
+  }
+
+  /* =========================================================================== */
+
+  window.googleAsyncInit = () => {
+    gapi.load('auth2', () => {
+      this.googleAuth2 = gapi.auth2.init({
+        client_id: this.google_client_id,
+        scope: 'email'
+      });
+    });
+  }
+
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "https://apis.google.com/js/client:platform.js?onload=googleAsyncInit";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'google-jssdk'));
+
+  $('.googleLogin').on('click', function() {
+    location.href = 'https://ml-andy.github.io/20190219_iphoneX/login.html?googleback=1';
+  });
+
+  /* =========================================================================== */
 
   var search = location.search;
   if (search.indexOf('fbback') !== -1) {
-    $('.content').append('login back</br>');
-    fbLogin(function(obj) {
-      $('.content').append('email:' + obj.email + '</br>');
-      $('.content').append('url:' + location.href + '</br>');
-    });
+    $('.content').append('fb login back</br>');
+    // fbLogin(function(obj) {
+    //   $('.content').append('email:' + obj.email + '</br>');
+    //   $('.content').append('url:' + location.href + '</br>');
+    // });
+  } else if (search.indexOf('googleback') !== -1) {
+    $('.content').append('google login back</br>');
   }
 
 </script>
