@@ -133,7 +133,7 @@
 </body>
 
 <script>
-    var version = 'v79';
+    var version = 'v88';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -141,9 +141,9 @@
     }
     $('.demo span').html(version);
     $('.btn').on('click', function() {
-        var time = new Date().getTime();
-        location.href = location.origin + location.pathname + '?time=' + time + '&token=';
-        // location.href = 'https://ml-andy.github.io/20190219_iphoneX/login.html';
+        // var time = new Date().getTime();
+        // location.href = location.origin + location.pathname + '?time=' + time + '&token=';
+        location.href = 'https://ml-andy.github.io/20190219_iphoneX/login.html';
     });
     window.onscroll = function() {
         // updateWindowHeight();
