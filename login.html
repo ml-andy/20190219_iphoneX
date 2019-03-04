@@ -20,7 +20,7 @@
 </body>
 
 <script>
-  var version = 'v93';
+  var version = 'v94';
   var search = location.search;
   var isNotRightUrl = search.indexOf('version=' + version) === -1;
   if (isNotRightUrl) {
@@ -47,7 +47,7 @@
 
   window.fbAsyncInit = () => {
     FB.init({
-      appId            : '2264433227106703',
+      appId            : '309850763221643',
       autoLogAppEvents : true,
       xfbml            : true,
       version          : 'v3.2',
@@ -64,7 +64,7 @@
   }(document, 'script', 'facebook-jssdk'));
 
   $('.fbLogin').on('click', function() {
-    location.href = 'https://www.facebook.com/v3.2/dialog/oauth?client_id=2264433227106703&redirect_uri=https://ml-andy.github.io/20190219_iphoneX/login.html?mmo_fb=1';
+    location.href = 'https://www.facebook.com/v3.2/dialog/oauth?client_id=309850763221643&redirect_uri=https://ml-andy.github.io/20190219_iphoneX/login.html?mmo_fb=1';
 
     // fbLogin(function(obj) {
     //   $('.content').append('email:' + obj.email + '</br>');
