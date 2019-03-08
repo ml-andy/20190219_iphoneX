@@ -7,6 +7,11 @@
   <title>test social media</title>
   <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <style>
+    .content{
+      word-break: break-all;
+    }
+  </style>
 </head>
 <body>
     <button class="btn redirect">redirect</button>
@@ -20,7 +25,7 @@
 </body>
 
 <script>
-  var version = 'v96';
+  var version = 'v97';
   var search = location.search;
   var isNotRightUrl = search.indexOf('version=' + version) === -1;
   if (isNotRightUrl) {
