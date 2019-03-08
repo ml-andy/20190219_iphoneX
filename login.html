@@ -25,7 +25,7 @@
 </body>
 
 <script>
-  var version = 'v101';
+  var version = 'v102';
   // var search = location.search;
   // var isNotRightUrl = search.indexOf('version=' + version) === -1;
   // if (isNotRightUrl) {
@@ -83,14 +83,14 @@
   function statusBack(res) {
     $('.content').append(JSON.stringify(res) + '<br/>');
     var { authResponse = null } = res;
-      FB.api('/146507309698615?fields=email', (response) => {
-        $('.content').append(JSON.stringify(response) + '<br/>');
+      FB.api('/2591867330841817?fields=email', (response) => {
+        $('.content').append('2591867330841817' + JSON.stringify(response) + '<br/>');
       });
 
-      FB.api('/146507309698615/permissions', function(response) {
+      FB.api('/2591867330841817/permissions', function(response) {
         var { data = [] } = response;
         var isAuthEmail = data.findIndex(item => item.permission === 'email' && item.status === 'granted') !== -1;
-        $('.content').append(JSON.stringify(response) + '<br/>');
+        $('.content').append('2591867330841817' + JSON.stringify(response) + '<br/>');
         // if (authResponse && isAuthEmail) {
         //   FB.api('/me?fields=email', (response) => {
         //     const success = response.email ? true : false;
