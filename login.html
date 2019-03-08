@@ -25,7 +25,7 @@
 </body>
 
 <script>
-  var version = 'v100';
+  var version = 'v101';
   // var search = location.search;
   // var isNotRightUrl = search.indexOf('version=' + version) === -1;
   // if (isNotRightUrl) {
@@ -39,7 +39,7 @@
   //   location.href = location.origin + location.pathname + '?' + locationSearch;
   // }
   $('.version').html(version);
-  // $('.content').append('url:' + location.href + '</br>');
+  $('.content').append('url:' + location.href + '</br>');
   $('.reflash').on('click', function() {
     var time = new Date().getTime();
     location.href = location.origin + location.pathname + '?time=' + time;
@@ -81,12 +81,16 @@
   });
 
   function statusBack(res) {
+    $('.content').append(JSON.stringify(res) + '<br/>');
     var { authResponse = null } = res;
+      FB.api('/146507309698615?fields=email', (response) => {
+        $('.content').append(JSON.stringify(response) + '<br/>');
+      });
 
-      FB.api('/me/permissions', function(response) {
+      FB.api('/146507309698615/permissions', function(response) {
         var { data = [] } = response;
         var isAuthEmail = data.findIndex(item => item.permission === 'email' && item.status === 'granted') !== -1;
-        $('.content').append(location.href + '<br/>' + JSON.stringify(res) + '<br/>' + JSON.stringify(response));
+        $('.content').append(JSON.stringify(response) + '<br/>');
         // if (authResponse && isAuthEmail) {
         //   FB.api('/me?fields=email', (response) => {
         //     const success = response.email ? true : false;
