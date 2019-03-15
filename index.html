@@ -134,7 +134,7 @@
 </body>
 
 <script>
-    var version = 'v107';
+    var version = 'v108';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -146,8 +146,8 @@
     })
     $('.btn').on('click', function() {
         // var time = new Date().getTime();
-        // location.href = location.origin + location.pathname + '?time=' + time + '&token=';
-        location.href = 'market://details?id=com.cathay.mymobione&hl=zh_TW';
+        location.href = location.origin + location.pathname + '?time=' + time + '&token=';
+        // location.href = 'market://details?id=com.cathay.mymobione&hl=zh_TW';
     });
     window.onscroll = function() {
         // updateWindowHeight();
