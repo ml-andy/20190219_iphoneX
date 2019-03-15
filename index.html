@@ -134,7 +134,7 @@
 </body>
 
 <script>
-    var version = 'v108';
+    var version = 'v109';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -142,7 +142,7 @@
     }
     $('.demo span').html(version);
     $('.btn5').on('click', function() {
-        location.href = 'https://smr.cathaybkdev.com.tw/services/thirdparty/#/?type=AUTOPASS';
+        location.href = 'https://smr.cathaybkdev.com.tw/services/thirdparty/#/?type=AUTOPASS&token=';
     })
     $('.btn').on('click', function() {
         // var time = new Date().getTime();
