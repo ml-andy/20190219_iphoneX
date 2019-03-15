@@ -106,6 +106,7 @@
 </head>
 <body>
     <button class="btn">reflash</button>
+    <button class="btn5">redirect</button>
     <button class="btn3">popup origin</button>
     <button class="btn2">popup bodylock</button>
     <button class="btn4">showAgent</button>
@@ -133,13 +134,16 @@
 </body>
 
 <script>
-    var version = 'v95';
+    var version = 'v107';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
         location.href = location.origin + location.pathname + '?version=' + version + '&token=';
     }
     $('.demo span').html(version);
+    $('.btn5').on('click', function() {
+        location.href = 'https://smr.cathaybkdev.com.tw/services/thirdparty/#/?type=AUTOPASS';
+    })
     $('.btn').on('click', function() {
         // var time = new Date().getTime();
         // location.href = location.origin + location.pathname + '?time=' + time + '&token=';
