@@ -134,7 +134,7 @@
 </body>
 
 <script>
-    var version = 'v110';
+    var version = 'v111';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -145,7 +145,7 @@
         location.href = 'https://57d7615e.ngrok.io/controller.html';
     })
     $('.btn').on('click', function() {
-        // var time = new Date().getTime();
+        var time = new Date().getTime();
         location.href = location.origin + location.pathname + '?time=' + time + '&token=';
         // location.href = 'market://details?id=com.cathay.mymobione&hl=zh_TW';
     });
