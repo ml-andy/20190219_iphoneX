@@ -31,7 +31,6 @@
             background-color: blue;
             text-align: center;
             color: #000;
-            padding-bottom: constant(safe-area-inset-bottom);
             padding-bottom: env(safe-area-inset-bottom);
         }
         .demo span {
@@ -71,7 +70,7 @@
 </body>
 
 <script>
-    var version = 'v118';
+    var version = 'v119';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
