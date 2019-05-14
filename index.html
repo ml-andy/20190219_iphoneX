@@ -10,10 +10,12 @@
     <script src="./bodyScrollLock.min.js"></script>
     <style>
         body {
-            height: 2000px;
+            height: auto;
+            min-height: 100vh;
             padding: 0;
             margin: 0;
             padding-top: 100px;
+            box-sizing: border-box;
         }
         .btn {
             width: 100px;
@@ -69,7 +71,7 @@
 </body>
 
 <script>
-    var version = 'v117';
+    var version = 'v118';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
