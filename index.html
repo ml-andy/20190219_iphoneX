@@ -68,11 +68,13 @@
     <div class="innerHeight"></div>
     <div class="availHeight"></div>
     <div class="availTop"></div>
+    <input id="name" type="text">
+    <div class="des"></div>
     <div class="demo"><span></span></div>
 </body>
 
 <script>
-    var version = 'v121';
+    var version = 'v122';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -141,6 +143,12 @@
         $('.support').append('userAgent:<br/>' + navigator.userAgent + '<br/><br/>');
         $('.support').append('cookie:<br/>' + document.cookie + '<br/><br/>');
     }
-
+    
+    $('#name').on('focus', function(e) {
+        $('.des').append('name focus<br/>');
+    })
+    $('#name').on('blur', function(e) {
+        $('.des').append('name blur<br/>');
+    })
 </script>
 </html>
