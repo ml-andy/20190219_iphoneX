@@ -74,7 +74,7 @@
 </body>
 
 <script>
-    var version = 'v123';
+    var version = 'v124';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -145,10 +145,16 @@
     }
     
     $('#name').on('focus', function(e) {
-        $('.des').append('name focus' + window.innerHeight +'<br/>');
+        var windowScreenHeight = window.screen.height;
+        var windowInnerHeight = window.innerHeight;
+        $('.des').append('focus:' + windowScreenHeight +'<br/>');
+        $('.des').append('focus:' + windowInnerHeight +'<br/>');
     })
     $('#name').on('blur', function(e) {
-        $('.des').append('name blur' + window.innerHeight +'<br/>');
+        var windowScreenHeight = window.screen.height;
+        var windowInnerHeight = window.innerHeight;
+        $('.des').append('blur:' + windowScreenHeight +'<br/>');
+        $('.des').append('blur:' + windowInnerHeight +'<br/>');
     })
 </script>
 </html>
