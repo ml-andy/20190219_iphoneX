@@ -74,7 +74,8 @@
 </body>
 
 <script>
-    var version = 'v125';
+    var windowInnerHeight = window.innerHeight;
+    var version = 'v126';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -145,20 +146,14 @@
     }
     
     $('#name').on('focus', function(e) {
-        var windowScreenHeight = window.screen.height;
-        var windowScreenAvailHeight = window.screen.availHeight;
-        var windowInnerHeight = window.innerHeight;
-        $('.des').append('focus:' + windowScreenHeight +'<br/>');
-        $('.des').append('focus:' + windowScreenAvailHeight +'<br/>');
-        $('.des').append('focus:' + windowInnerHeight +'<br/>');
+        var nowHeight = window.innerHeight;
+        $('.des').append('focus windowInnerHeight:' + windowInnerHeight +'<br/>');
+        $('.des').append('focus nowHeight:' + nowHeight +'<br/>');
     })
     $('#name').on('blur', function(e) {
-        var windowScreenHeight = window.screen.height;
-        var windowScreenAvailHeight = window.screen.availHeight;
-        var windowInnerHeight = window.innerHeight;
-        $('.des').append('blur:' + windowScreenHeight +'<br/>');
-        $('.des').append('blur:' + windowScreenAvailHeight +'<br/>');
-        $('.des').append('blur:' + windowInnerHeight +'<br/>');
+        var nowHeight = window.innerHeight;
+        $('.des').append('blur windowInnerHeight:' + windowInnerHeight +'<br/>');
+        $('.des').append('blur nowHeight:' + nowHeight +'<br/>');
     })
 </script>
 </html>
