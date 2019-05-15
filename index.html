@@ -75,7 +75,7 @@
 
 <script>
     var windowInnerHeight = window.innerHeight;
-    var version = 'v128';
+    var version = 'v129';
     var search = location.search;
     var isNotRightUrl = search.indexOf('version=' + version) === -1;
     if (isNotRightUrl) {
@@ -149,13 +149,13 @@
         var nowHeight = window.innerHeight;
         $('.des').append('focus windowInnerHeight:' + windowInnerHeight +'<br/>');
         $('.des').append('focus nowHeight:' + nowHeight +'<br/>');
-        $(window).on('resize', windowResize);
+        window.onresize = windowResize;
     })
     $('#name').on('blur', function(e) {
         var nowHeight = window.innerHeight;
         $('.des').append('blur windowInnerHeight:' + windowInnerHeight +'<br/>');
         $('.des').append('blur nowHeight:' + nowHeight +'<br/>');
-        $(window).off('resize', windowResize);
+        window.onresize = null;
     })
     function windowResize() {
         var nowHeight = window.innerHeight;
